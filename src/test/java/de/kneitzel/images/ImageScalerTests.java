@@ -24,10 +24,10 @@ public class ImageScalerTests {
             Assert.assertEquals(bytes, readBytes);
 
             try (FileOutputStream stream1 = new FileOutputStream("./temp/testHigh.png")) {
-                stream1.write(ImageScaler.createScaledImage(imageBytes, 100, 500));
+                stream1.write(ImageScaler.createScaledImage(imageBytes, 1000, 5000));
             }
             try (FileOutputStream stream2 = new FileOutputStream("./temp/testWide.png")) {
-                stream2.write(ImageScaler.createScaledImage(imageBytes, 500, 100));
+                stream2.write(ImageScaler.createScaledImage(imageBytes, 5000, 1000));
             }
         } catch (Exception ex) {
             Assert.fail("Exception thrown");
